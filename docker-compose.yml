@@ -1,0 +1,6 @@
+version: '1.17'
+services:
+  bot:
+    build: .
+    command: sh -c "python main.py"
+    restart: always
