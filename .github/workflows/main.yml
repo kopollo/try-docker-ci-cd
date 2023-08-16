@@ -10,7 +10,7 @@ jobs:
         run: echo env.deploy_key
 
       - name: Step 1 - Echo out a GitHub Actions Secret to the logs
-          run: |
+        run: |
             echo "The GitHub Action Secret will be masked:  "
             echo ${{ secrets.SECRET_TOKEN }}
             echo "Trick to echo GitHub Actions Secret:  "
