@@ -1,10 +1,13 @@
 name: demo test
 on: [workflow_dispatch, push]
 jobs:
-  print: 
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: try ssh
-        run: ssh -T root@212.60.21.216
-      - name: try echo
-        run: echo "KITTEN"
+      - uses: actions/checkout@v2
+      - name: ssh deploy
+        uses: easingthemes/ssh-deploy@v2.1.4
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          REMOTE_HOST: ${{ secrets.SERVER_IP }}
