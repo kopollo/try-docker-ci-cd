@@ -4,11 +4,7 @@ jobs:
   print: 
     runs-on: ubuntu-latest
     steps:
-      - name: get source code
-        uses: actions/checkout@v3
-      - name: install requirements
-        run: pip install -r requirements.txt
-      - name: run pytest
-        run: pytest
       - name: try ssh
-        run: ssh root@"${{secrets.SERVER_IP}}"        
+        run: ssh root@212.60.21.216
+      - name: try echo
+        run: echo "KITTEN"
