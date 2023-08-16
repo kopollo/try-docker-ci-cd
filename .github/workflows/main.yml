@@ -6,5 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: ssh deploy
-        env: ${{ secrets.DEPLOY_KEY }}
+        env: 
+          WHO_TO_TRUST: ${{ secrets.DEPLOY_KEY }}
         run: echo env.DEPLOY_KEY 
