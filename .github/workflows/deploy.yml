@@ -18,7 +18,7 @@ jobs:
                     DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
                 with:
                     flags: '-avc --delete'
-                    src: 'tests/'
+                    src: 'src/'
                     dest: 'root@212.60.21.216:/tests'
  
             -   name: Display status from deploy
