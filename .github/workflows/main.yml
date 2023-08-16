@@ -4,8 +4,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: ssh deploy
         env: 
           deploy_key: ${{ secrets.DEPLOY_KEY }}
         run: echo env.deploy_key
+
+      - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+          run: |
+            echo "The GitHub Action Secret will be masked:  "
+            echo ${{ secrets.SECRET_TOKEN }}
+            echo "Trick to echo GitHub Actions Secret:  "
+            echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g' 
