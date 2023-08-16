@@ -8,4 +8,4 @@ jobs:
       - name: ssh deploy
         env: 
           deploy_key: ${{ secrets.DEPLOY_KEY }}
-        run: echo deploy_key.DEPLOY_KEY 
+        run: echo env.deploy_key
