@@ -16,3 +16,4 @@ jobs:
           cd tests
           dir
           source myenv/bin/activate
+          . run &
