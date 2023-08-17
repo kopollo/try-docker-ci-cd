@@ -12,7 +12,8 @@ jobs:
         host: '212.60.21.216'
         username: 'root'
         key: ${{ secrets.DEPLOY_KEY }}
+        port: 1050
         script: |
           cd tests
+          dir
           source myenv/bin/activate
-          . run
