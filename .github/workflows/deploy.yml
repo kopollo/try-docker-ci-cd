@@ -1,25 +1,15 @@
-name: Deploy
- 
-on: [workflow_dispatch, push]
+name: remote ssh command
+on: [push]
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        timeout-minutes: 30
-        steps:
-            -   run: ls -la
-            -   uses: actions/checkout@master
- 
-            -   run: sudo apt-get install rsync
-            
-            -   name: Deploy theme on server
-                id: deploy_theme
-                uses: Pendect/action-rsyncer@v1.1.0
-                env:
-                    DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
-                with:
-                    flags: '-avc --delete'
-                    src: 'src/'
-                    dest: 'root@212.60.21.216:/tests'
- 
-            -   name: Display status from deploy
-                run: echo "${{ steps.deploy.outputs.status }}"
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: root@212.60.21.216
+        username: root
+        key: ${{ secrets.DEPLOY_KEY }}
+        script: whoami
