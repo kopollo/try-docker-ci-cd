@@ -17,3 +17,4 @@ jobs:
           dir
           source myenv/bin/activate
           . run &
+          exit
