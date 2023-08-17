@@ -14,4 +14,5 @@ jobs:
         key: ${{ secrets.DEPLOY_KEY }}
         script: |
           cd tests
+          source myenv/bin/activate
           . run
