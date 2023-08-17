@@ -12,7 +12,7 @@ jobs:
         host: '212.60.21.216'
         username: 'root'
         key: ${{ secrets.DEPLOY_KEY }}
-        port: 1050
+        port: 5123
         script: |
           cd tests
           dir
