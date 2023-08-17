@@ -13,7 +13,6 @@ jobs:
         username: 'root'
         key: ${{ secrets.DEPLOY_KEY }}
         script: |
-          echo cat
-          echo bad
-          echo dor
-          
+          dir
+          cd root/tests
+          dir
