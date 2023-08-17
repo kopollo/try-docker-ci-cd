@@ -12,4 +12,8 @@ jobs:
         host: '212.60.21.216'
         username: 'root'
         key: ${{ secrets.DEPLOY_KEY }}
-        script: whoami
+        script: |
+          echo cat
+          echo bad
+          echo dor
+          
