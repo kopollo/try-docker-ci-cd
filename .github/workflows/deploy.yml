@@ -17,5 +17,5 @@ jobs:
           cd demo
           git init
           git remote add origin https://github.com/kopollo/try-docker-ci-cd.git
-          git fetch -all
+          git fetch --all
           git checkout main
