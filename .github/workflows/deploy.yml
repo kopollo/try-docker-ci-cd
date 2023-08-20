@@ -15,4 +15,7 @@ jobs:
         command_timeout: '30s'
         script: |
           cd demo
-          git pull 
+          git init
+          git remote add origin https://github.com/kopollo/try-docker-ci-cd.git
+          git fetch -all
+          git checkout main
