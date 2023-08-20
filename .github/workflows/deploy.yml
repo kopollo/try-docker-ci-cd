@@ -14,8 +14,5 @@ jobs:
         key: ${{ secrets.DEPLOY_KEY }}
         command_timeout: '30s'
         script: |
-          cd tests
-          dir
-          source myenv/bin/activate
-          . run.sh
-          exit
+          cd demo
+          git pull 
